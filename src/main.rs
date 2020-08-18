@@ -283,6 +283,7 @@ fn main() {
                 .send()
                 .unwrap();
             if !response.status().is_success() {
+                eprintln!("Token authentication failed");
                 response.json::<Error>().unwrap().fail();
             }
 
